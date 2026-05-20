@@ -45,7 +45,7 @@
     const div = document.createElement('div');
     div.className = 'chat-msg ' + (
       type === 'ai-user'   ? 'user-msg'    :
-      type === 'ai-reply'  ? 'owner-msg'   :
+      type === 'ai-reply'  ? 'system'      :
       type === 'ai-error'  ? 'sent-confirm':
       'system'
     );
@@ -213,8 +213,10 @@
   const SR = window.SpeechRecognition || window.webkitSpeechRecognition || null;
 
   if (!SR) {
-    // Hide mic on truly unsupported browsers (Firefox)
-    aiMicBtn.style.display = 'none';
+    // Browser doesn't support Web Speech API — show message on tap instead of hiding
+    aiMicBtn.addEventListener('click', () => {
+      appendMessage('Voice input isn\'t supported in this browser. Please use Chrome or Safari, or type your question.', 'ai-error');
+    });
   } else {
     recognition = new SR();
     recognition.continuous     = false;
