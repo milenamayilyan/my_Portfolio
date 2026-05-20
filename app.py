@@ -72,6 +72,35 @@ CERTIFICATIONS:
 - DELF B2 (Diplôme d'Études en Langue Française) — February 2026, France Éducation international
 - Cambridge First Certificate in English (FCE) — April 2025, Cambridge English Assessment (C1 level)
 - Participation Certificate, Leaders for Peace Summer School — June 2024, French University in Armenia (global governance, climate change, AI, mediation, peacebuilding)
+
+ADDITIONAL SKILLS (from portfolio website):
+- Machine Learning: K-Means, DBSCAN, Hierarchical Clustering
+- Cloud & Infrastructure: AWS (Lambda, S3, API Gateway), Firebase
+- Creative Tools: Adobe After Effects, Photoshop
+- GPT API Integration
+- Streamlit
+- Data Cleaning & EDA, Feature Engineering
+
+VOLUNTEER WORK:
+- Digitec 2024 — Yerevan, Armenia (2024)
+- Re-consecration of the Mother Cathedral of Holy Etchmiadzin — Vagharshapat, Armenia (2024)
+- Yerevan Dialogues 2025 — Yerevan, Armenia (2025)
+- European Bank for Reconstruction and Development — Yerevan, Armenia (2024)
+- IPU 10th Global Conference of Young Parliamentarians — Yerevan, Armenia (2024)
+- Noah vs Shkëndija — UEFA Conference League — Yerevan, Armenia (2024)
+- Noah vs A.E.K. — UEFA Conference League — Yerevan, Armenia (2024)
+- Toon Expo 2025 — Guest Registration — Yerevan, Armenia (2025)
+- Noah vs Legia Warszawa — UEFA Conference League — Yerevan, Armenia (2025)
+- "AI qez ban" Event by ReArmenia — Yerevan, Armenia (2025)
+- UEFA Football Doctor Education Programme 2026 — Yerevan, Armenia (2026)
+- European Shooting Championships 2026 — Yerevan, Armenia (2026)
+- Digitization of Archival Documents — Probation Service of Armenia (2025–2026)
+- Feast of the Catholicosate of Holy Etchmiadzin — Vagharshapat, Armenia (2025)
+
+ONLINE PRESENCE:
+- GitHub: https://github.com/milenamayilyan
+- LinkedIn: available on portfolio website
+- Portfolio: http://51.21.162.125
 """
 
 load_dotenv()
