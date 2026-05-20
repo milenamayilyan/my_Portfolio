@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Milena Mayilyan — Computer Science &amp; Applied Mathematics</title>
+  <meta name="description" content="Portfolio of Milena Mayilyan — CS undergraduate at UFAR & Toulouse University.">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+</head>
+<body>
+
+<div class="cursor"></div>
+<div class="cursor-ring"></div>
+
+<!-- Mobile nav overlay -->
+
+<!-- Main navbar -->
+<nav aria-label="Main navigation">
+  <a href="#hero" class="nav-logo">M<span>.</span>Mayilyan</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#volunteer">Volunteer</a></li>
+    <li><a href="#achievements">Awards</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════════════════════════
+     HERO
+════════════════════════════ -->
+<section id="hero">
+  <div class="hero-grid-line" aria-hidden="true"></div>
+
+  <div class="hero-text">
+    <p class="hero-eyebrow">Computer Science · Data · IoT</p>
+    <h1 class="hero-name">
+      Milena<em>Mayilyan</em>
+    </h1>
+    <p class="hero-tagline">
+      Undergraduate at <strong>UFAR &amp; Toulouse III</strong> — building intelligent systems at the intersection of software engineering, embedded hardware, and data analysis.
+    </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn-primary">View Projects</a>
+      <a href="#contact" class="btn-ghost">Get in Touch</a>
+    </div>
+  </div>
+
+  <div class="hero-image-wrap">
+    <div class="hero-photo-frame">
+      <img src="{{ url_for('static', filename='img/profile.jpg') }}" alt="Milena Mayilyan" class="hero-photo">
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════
+     ABOUT
+════════════════════════════ -->
+<section id="about">
+  <div class="section-header reveal">
+    <div>
+      <p class="section-label">Introduction</p>
+      <h2 class="section-title">About <em>Me</em></h2>
+    </div>
+    <span class="section-count" aria-hidden="true">01</span>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-facts reveal">
+      <div class="about-fact">
+        <p class="about-fact-label">Degree</p>
+        <p class="about-fact-value">B.Sc. CS &amp; Applied Mathematics</p>
+      </div>
+      <div class="about-fact">
+        <p class="about-fact-label">University</p>
+        <p class="about-fact-value">UFAR &amp; Toulouse III</p>
+      </div>
+
+      <div class="about-fact">
+        <p class="about-fact-label">Languages</p>
+        <p class="about-fact-value">Armenian · English · French · Russian</p>
+      </div>
+    </div>
+
+    <div class="about-bio reveal reveal-delay-2">
+      <p>
+        I'm a <strong>motivated Computer Science undergraduate</strong> with a strong foundation in analytical thinking, problem-solving, and software development. Currently pursuing dual degrees — a Bachelor of CS &amp; Applied Mathematics at <strong>UFAR</strong> and a Bachelor of Science &amp; Engineering at <strong>Toulouse III — Paul Sabatier University</strong>.
+      </p>
+      <p>
+        My work spans IoT hardware prototyping, data pipelines, full-stack web applications, and database engineering. I thrive when precision and creativity intersect.
+      </p>
+      <div class="about-edu">
+        <div class="edu-item">
+          <div class="edu-dot"></div>
+          <div>
+            <p class="edu-name">French University in Armenia (UFAR)</p>
+            <p class="edu-degree">B.Sc. Computer Science &amp; Applied Mathematics</p>
+          </div>
+          <span class="edu-year">2023–2027</span>
+        </div>
+        <div class="edu-item">
+          <div class="edu-dot"></div>
+          <div>
+            <p class="edu-name">Toulouse III — Paul Sabatier University</p>
+            <p class="edu-degree">B.Sc. Science &amp; Engineering</p>
+          </div>
+          <span class="edu-year">2024–2027</span>
+        </div>
+        <div class="edu-item">
+          <div class="edu-dot"></div>
+          <div>
+            <p class="edu-name">TUMO Labs — ClimateNet Program</p>
+            <p class="edu-degree">Project-Based Climate Research &amp; Engineering</p>
+          </div>
+          <span class="edu-year">March 2026 – Present</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════
+     SKILLS
+════════════════════════════ -->
+<section id="skills">
+  <div class="section-header reveal">
+    <div>
+      <p class="section-label">Expertise</p>
+      <h2 class="section-title">Skills &amp; <em>Languages</em></h2>
+    </div>
+    <span class="section-count" aria-hidden="true">02</span>
+  </div>
+  <div class="skills-wrap">
+    <div class="reveal">
+      <p class="skills-category-title">Programming &amp; Engineering</p>
+      <div class="skills-pills">
+        <span class="skill-pill">Python</span><span class="skill-pill">C</span><span class="skill-pill">C#</span>
+        <span class="skill-pill">Java</span><span class="skill-pill">SQL</span><span class="skill-pill">Bash</span>
+        <span class="skill-pill">Arduino</span><span class="skill-pill">ESP32</span>
+        <span class="skill-pill">Raspberry Pi</span><span class="skill-pill">IoT Prototyping</span>
+      </div>
+    </div>
+    <div class="reveal reveal-delay-1">
+      <p class="skills-category-title">Data &amp; Analytics</p>
+      <div class="skills-pills">
+        <span class="skill-pill">Applied Statistical Analysis</span>
+        <span class="skill-pill">Probability Modeling (R, Python)</span>
+        <span class="skill-pill">Machine Learning (K-Means, DBSCAN)</span>
+        <span class="skill-pill">Data Cleaning &amp; EDA</span>
+        <span class="skill-pill">Feature Engineering</span>
+        <span class="skill-pill">Streamlit</span>
+      </div>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <p class="skills-category-title">Cloud &amp; Infrastructure</p>
+      <div class="skills-pills">
+        <span class="skill-pill">AWS (Lambda, S3, API Gateway)</span>
+        <span class="skill-pill">Firebase</span><span class="skill-pill">Git &amp; GitHub</span>
+        <span class="skill-pill">Linux / Unix Shell</span>
+        <span class="skill-pill">Computer Networks</span>
+        <span class="skill-pill">Operating Systems</span>
+      </div>
+    </div>
+    <div class="reveal reveal-delay-1">
+      <p class="skills-category-title">Creative &amp; Productivity</p>
+      <div class="skills-pills">
+        <span class="skill-pill highlight">Adobe After Effects</span>
+        <span class="skill-pill highlight">Photoshop</span>
+        <span class="skill-pill">Microsoft Office Suite</span>
+        <span class="skill-pill">GPT API Integration</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <p class="skills-category-title">Languages</p>
+      <div class="langs-grid">
+        <div class="lang-card"><p class="lang-name">Armenian</p><p class="lang-level">Native</p></div>
+        <div class="lang-card"><p class="lang-name">English</p><p class="lang-level">C1</p><p class="lang-cert">Cambridge FCE Certified</p></div>
+        <div class="lang-card"><p class="lang-name">French</p><p class="lang-level">B2</p><p class="lang-cert">DELF B2 Certified</p></div>
+        <div class="lang-card"><p class="lang-name">Russian</p><p class="lang-level">B1</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════
+     PROJECTS
+════════════════════════════ -->
+<section id="projects">
+  <div class="section-header reveal">
+    <div>
+      <p class="section-label">Work</p>
+      <h2 class="section-title">Academic <em>Projects</em></h2>
+    </div>
+    <span class="section-count" aria-hidden="true">03</span>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card reveal">
+      <p class="project-number">01</p>
+      <h3 class="project-title">Air Quality Monitoring System</h3>
+      <p class="project-desc">IoT-based air quality monitoring system built as part of the TUMO Labs – ClimateNet Project. Integrates multiple environmental sensors with an ESP32 to measure PM, CO₂, VOCs, temperature and humidity. Cloud pipeline via AWS (API Gateway, Lambda, S3).</p>
+      <div class="project-tags"><span class="project-tag">IoT</span><span class="project-tag">ESP32</span><span class="project-tag">AWS</span><span class="project-tag">Python</span></div>
+      <a href="https://milenamayilyan.github.io/Air_Quality_Project/" target="_blank" rel="noopener" class="project-link">View Project <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+    <div class="project-card reveal reveal-delay-1">
+      <p class="project-number">02</p>
+      <h3 class="project-title">Ride-Sharing Database System</h3>
+      <p class="project-desc">Complete relational database for a ride-sharing platform with full lifecycle management — users to payments and ratings. Implemented triggers, stored procedures, constraints, and indexing for automation, data integrity, and performance.</p>
+      <div class="project-tags"><span class="project-tag">SQL Server</span><span class="project-tag">T-SQL</span><span class="project-tag">DB Design</span></div>
+      <a href="https://github.com/milenamayilyan" target="_blank" rel="noopener" class="project-link">View on GitHub <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+    <div class="project-card reveal reveal-delay-2">
+      <p class="project-number">03</p>
+      <h3 class="project-title">Armenian Job Market Analysis</h3>
+      <p class="project-desc">End-to-end data analysis on Armenian job platforms. Included data cleaning, feature engineering, and EDA. Applied K-Means, Hierarchical, and DBSCAN clustering to identify market patterns.</p>
+      <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">Pandas</span><span class="project-tag">Scikit-learn</span><span class="project-tag">EDA</span></div>
+      <a href="https://github.com/milenamayilyan" target="_blank" rel="noopener" class="project-link">View on GitHub <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+    <div class="project-card reveal reveal-delay-1">
+      <p class="project-number">04</p>
+      <h3 class="project-title">Aivy — Personalized Study Coach</h3>
+      <p class="project-desc">Built a local web app using Python and Streamlit with GPT-3.5 Turbo for AI-powered study guidance, featuring subject-based chat, file uploads, and Firebase authentication and data storage.</p>
+      <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">Streamlit</span><span class="project-tag">GPT-3.5</span><span class="project-tag">Firebase</span></div>
+      <a href="https://github.com/milenamayilyan/Aivy" target="_blank" rel="noopener" class="project-link">View on GitHub <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════
+     VOLUNTEER
+════════════════════════════ -->
+<section id="volunteer">
+  <div class="section-header reveal">
+    <div>
+      <p class="section-label">Community</p>
+      <h2 class="section-title">Volunteer <em>Work</em></h2>
+    </div>
+    <span class="section-count" aria-hidden="true">04</span>
+  </div>
+  <div class="vol-grid">
+    <div class="vol-card reveal"><div class="vol-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div><div class="vol-content"><p class="vol-title">Digitec 2024</p><p class="vol-year">2024 · Yerevan, Armenia</p></div></div>
+    <div class="vol-card reveal reveal-delay-1"><div class="vol-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div><div class="vol-content"><p class="vol-title">Re-consecration of the Mother Cathedral of Holy Etchmiadzin</p><p class="vol-year">2024 · Vagharshapat, Armenia</p></div></div>
+    <div class="vol-card reveal"><div class="vol-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="vol-content"><p class="vol-title">Yerevan Dialogues 2025</p><p class="vol-year">2025 · Yerevan, Armenia</p></div></div>
+    <div class="vol-card reveal reveal-delay-1"><div class="vol-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="vol-content"><p class="vol-title">European Bank for Reconstruction and Development</p><p class="vol-year">2024 · Yerevan, Armenia</p></div></div>
+    <div class="vol-card reveal"><div class="vol-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="vol-content"><p class="vol-title">IPU 10th Global Conference of Young Parliamentarians</p><p class="vol-year">2024 · Yerevan, Armenia</p></div></div>
+    <div class="vol-card reveal reveal-delay-1"><div class="vol-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div class="vol-content"><p class="vol-title">Noah vs Shkëndija — UEFA Conference League</p><p class="vol-year">2024 · Yerevan, Armenia</p></div></div>
+    <div class="vol-card reveal"><div class="vol-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div class="vol-content"><p class="vol-title">Noah vs A.E.K. — UEFA Conference League</p><p class="vol-year">2024 · Yerevan, Armenia</p></div></div>
+    <div class="vol-card reveal reveal-delay-1"><div class="vol-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg></div><div class="vol-content"><p class="vol-title">Toon Expo 2025 — Guest Registration</p><p class="vol-year">2025 · Yerevan, Armenia</p></div></div>
+    <div class="vol-card reveal"><div class="vol-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div class="vol-content"><p class="vol-title">Noah vs Legia Warszawa — UEFA Conference League</p><p class="vol-year">2025 · Yerevan, Armenia</p></div></div>
+    <div class="vol-card reveal reveal-delay-1"><div class="vol-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 4a6 6 0 1 1-6 6 6 6 0 0 1 6-6z"/></svg></div><div class="vol-content"><p class="vol-title">"AI qez ban" Event by ReArmenia</p><p class="vol-year">2025 · Yerevan, Armenia</p></div></div>
+    <div class="vol-card reveal"><div class="vol-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div><div class="vol-content"><p class="vol-title">UEFA Football Doctor Education Programme 2026</p><p class="vol-year">2026 · Yerevan, Armenia</p></div></div>
+    <div class="vol-card reveal reveal-delay-1"><div class="vol-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div class="vol-content"><p class="vol-title">European Shooting Championships 2026</p><p class="vol-year">2026 · Yerevan, Armenia</p></div></div>
+    <div class="vol-card reveal"><div class="vol-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg></div><div class="vol-content"><p class="vol-title">Digitization of Archival Documents — Probation Service of Armenia</p><p class="vol-year">2025–2026 · Yerevan, Armenia</p></div></div>
+    <div class="vol-card reveal reveal-delay-1"><div class="vol-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div><div class="vol-content"><p class="vol-title">Feast of the Catholicosate of Holy Etchmiadzin</p><p class="vol-year">2025 · Vagharshapat, Armenia</p></div></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════
+     ACHIEVEMENTS
+════════════════════════════ -->
+<section id="achievements">
+  <div class="section-header reveal">
+    <div>
+      <p class="section-label">Recognition</p>
+      <h2 class="section-title">Awards &amp; <em>Certifications</em></h2>
+    </div>
+    <span class="section-count" aria-hidden="true">05</span>
+  </div>
+  <div class="ach-grid">
+    <div class="ach-card reveal"><div class="ach-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div><p class="ach-title">Armenian Educational Foundation Scholarship</p><p class="ach-sub">Merit-based award covering the majority of tuition, granted to promising students with strong academic performance.</p><p class="ach-date">2024 – Present</p></div>
+    <div class="ach-card reveal reveal-delay-1"><div class="ach-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg></div><p class="ach-title">DELF B2 — Diplôme d'Études en Langue Française</p><p class="ach-sub">Awarded B2 level by France Éducation International.</p><p class="ach-date">February 2026</p></div>
+    <div class="ach-card reveal"><div class="ach-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg></div><p class="ach-title">Cambridge First Certificate in English (FCE)</p><p class="ach-sub">Awarded C1 level by Cambridge English Assessment.</p><p class="ach-date">April 2025</p></div>
+    <div class="ach-card reveal reveal-delay-1"><div class="ach-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><p class="ach-title">Leaders for Peace Summer School</p><p class="ach-sub">Participation certificate from UFAR. Program focused on global governance, climate change, AI, mediation, and peacebuilding.</p><p class="ach-date">June 2024</p></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════
+     CONTACT (info only, no form)
+════════════════════════════ -->
+<section id="contact">
+  <div class="section-header reveal">
+    <div>
+      <p class="section-label">Reach Out</p>
+      <h2 class="section-title">Get in <em>Touch</em></h2>
+    </div>
+    <span class="section-count" aria-hidden="true">06</span>
+  </div>
+  <div class="contact-inner reveal">
+    <p class="contact-intro">Whether you have an opportunity, a project idea, or just want to connect — I'd love to hear from you. Use the chat bubble in the bottom-right corner or reach out directly below.</p>
+    <div class="contact-links">
+      <a href="mailto:milenamayilyan5@gmail.com" class="contact-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        milenamayilyan5@gmail.com
+      </a>
+      <a href="https://www.linkedin.com/in/milena-mayilyan-7410b4293/" target="_blank" rel="noopener" class="contact-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn Profile
+      </a>
+      <a href="https://github.com/milenamayilyan" target="_blank" rel="noopener" class="contact-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+        GitHub Profile
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-copy">&copy; 2026 <span>Milena Mayilyan</span> · Yerevan, Armenia</p>
+  <div class="footer-social">
+    <a href="https://github.com/milenamayilyan" target="_blank" rel="noopener" aria-label="GitHub">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/milena-mayilyan-7410b4293/" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a href="mailto:milenamayilyan5@gmail.com" aria-label="Email">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    </a>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════
+     LIVE CHAT WIDGET (unchanged — human Chat with Me)
+════════════════════════════════════════════════════════ -->
+<div id="chat-bubble">
+  <div id="chat-panel">
+    <div class="chat-header">
+      <img src="{{ url_for('static', filename='img/profile.jpg') }}" alt="Milena" class="chat-avatar-img">
+      <div class="chat-header-info">
+        <p class="chat-header-name">Milena Mayilyan</p>
+        <p class="chat-header-status"><span class="chat-status-dot"></span>Usually replies quickly</p>
+      </div>
+    </div>
+    <div class="chat-messages" id="chat-messages"></div>
+
+    <!-- Step 1: name -->
+    <div class="chat-input-area" id="chat-step-1">
+      <div class="chat-step-col">
+        <span class="chat-step-label">Your name</span>
+        <input id="chat-name-input" type="text" placeholder="Jane Smith">
+      </div>
+      <button class="chat-send-btn" id="chat-next-btn" title="Next" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </button>
+    </div>
+
+    <!-- Step 2: email -->
+    <div class="chat-input-area" id="chat-step-2" style="display:none;">
+      <div class="chat-step-col">
+        <span class="chat-step-label">Your email</span>
+        <input id="chat-email-input" type="email" placeholder="jane@example.com">
+      </div>
+      <button class="chat-send-btn" id="chat-next-btn-2" title="Next" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </button>
+    </div>
+
+    <!-- Step 3: message -->
+    <div class="chat-input-area" id="chat-step-3" style="display:none;">
+      <textarea id="chat-message-input" placeholder="Type your message…" rows="1"></textarea>
+      <button class="chat-send-btn" id="chat-send-btn" title="Send" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <button id="chat-toggle" title="Chat with Milena" type="button">
+    <svg id="chat-icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <svg id="chat-icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     AI ASSISTANT WIDGET (new — AI-powered, separate)
+════════════════════════════════════════════════════════ -->
+<div id="ai-bubble">
+
+  <!-- AI Chat Panel -->
+  <div id="ai-panel" role="dialog" aria-label="AI Assistant">
+
+    <!-- Header -->
+    <div class="ai-header">
+      <div class="ai-header-icon">
+        <!-- Spark / robot icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2 7h7l-5.5 4 2 7L12 16l-5.5 4 2-7L3 9h7z"/></svg>
+      </div>
+      <div class="ai-header-info">
+        <p class="ai-header-name">AI Assistant</p>
+        <p class="ai-header-sub">Knows Milena's profile · Powered by GPT</p>
+      </div>
+      <button class="ai-header-close" id="ai-close-btn" title="Close" type="button" aria-label="Close AI chat">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <!-- Message list -->
+    <div class="ai-messages" id="ai-messages" role="log" aria-live="polite"></div>
+
+    <!-- Typing indicator (hidden by default) -->
+    <div class="ai-typing" id="ai-typing" style="display:none;" aria-label="AI is typing">
+      <span></span><span></span><span></span>
+    </div>
+
+    <!-- Input row -->
+    <div class="ai-input-row">
+      <!-- Microphone (speech-to-text) -->
+      <button class="ai-mic-btn" id="ai-mic-btn" title="Speak your question" type="button" aria-label="Start voice input">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+      </button>
+      <textarea id="ai-input" placeholder="Ask about Milena's skills, projects…" rows="1" aria-label="Message input"></textarea>
+      <button class="ai-send-btn" id="ai-send-btn" title="Send message" type="button" aria-label="Send message">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+      </button>
+    </div>
+
+  </div><!-- /ai-panel -->
+
+  <!-- Floating trigger button -->
+  <button id="ai-toggle" title="Ask AI about Milena" type="button" aria-label="Open AI Assistant">
+    <!-- Spark icon (open state) -->
+    <svg id="ai-icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2l2 7h7l-5.5 4 2 7L12 16l-5.5 4 2-7L3 9h7z"/>
+    </svg>
+    <!-- X icon (close state) -->
+    <svg id="ai-icon-close" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+      <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  </button>
+
+</div><!-- /ai-bubble -->
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+<script src="{{ url_for('static', filename='js/ai-assistant.js') }}"></script>
+</body>
+</html>

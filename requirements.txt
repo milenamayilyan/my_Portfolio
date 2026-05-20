@@ -1,0 +1,7 @@
+flask
+flask-socketio
+flask-mail
+gevent
+gevent-websocket
+requests
+python-dotenv
