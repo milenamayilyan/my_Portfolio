@@ -133,6 +133,44 @@ def contact():
                   f"<b>Email:</b> {email or '—'}\n<b>Message:</b>\n{message[:800]}")
     return jsonify({'success': True, 'session_id': session_id})
 
+@app.route('/api/ai-transcribe', methods=['POST'])
+def ai_transcribe():
+    """
+    Speech-to-Text endpoint — receives an audio file from the browser's
+    MediaRecorder, forwards it to OpenAI Whisper, and returns the transcript.
+    Works on all devices/browsers including Safari iOS.
+    """
+    OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY', '').strip()
+    if not OPENAI_API_KEY:
+        return jsonify({'success': False, 'error': 'AI service not configured.'}), 503
+
+    audio_file = request.files.get('audio')
+    if not audio_file:
+        return jsonify({'success': False, 'error': 'No audio file received.'}), 400
+
+    try:
+        audio_bytes = audio_file.read()
+        filename    = audio_file.filename or 'recording.webm'
+
+        # Send to OpenAI Whisper via multipart form
+        resp = http_requests.post(
+            'https://api.openai.com/v1/audio/transcriptions',
+            headers={'Authorization': f'Bearer {OPENAI_API_KEY}'},
+            files={'file': (filename, audio_bytes, audio_file.content_type or 'audio/webm')},
+            data={'model': 'whisper-1'},
+            timeout=30,
+        )
+        resp.raise_for_status()
+        transcript = resp.json().get('text', '').strip()
+        return jsonify({'success': True, 'transcript': transcript})
+
+    except http_requests.exceptions.Timeout:
+        return jsonify({'success': False, 'error': 'Transcription timed out. Please try again.'}), 504
+    except Exception as e:
+        app.logger.error(f'Transcription error: {e}')
+        return jsonify({'success': False, 'error': 'Transcription failed. Please try again.'}), 500
+
+
 @app.route('/api/ai-chat', methods=['POST'])
 def ai_chat():
     """
