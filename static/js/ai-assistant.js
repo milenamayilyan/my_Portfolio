@@ -256,7 +256,10 @@
    */
 
   // Check MediaRecorder support
-  if (!navigator.mediaDevices || !window.MediaRecorder) {
+  // Note: getUserMedia requires HTTPS or localhost — on plain HTTP some browsers
+  // still expose mediaDevices but will reject the getUserMedia call with NotAllowedError.
+  // We always show the button and surface a clear error if it fails.
+  if (!window.MediaRecorder) {
     aiMicBtn.disabled = true;
     aiMicBtn.title    = 'Audio recording not supported in this browser';
     aiMicBtn.style.opacity = '0.3';
@@ -300,9 +303,11 @@
     } catch (err) {
       console.error('[AI Assistant] Mic error:', err);
       if (err.name === 'NotAllowedError') {
-        appendMessage('Microphone access was denied. Please allow microphone permissions in your browser settings.', 'ai-error');
+        appendMessage('Microphone access was denied. Please allow it in your browser settings and try again.', 'ai-error');
+      } else if (err.name === 'NotSupportedError' || !navigator.mediaDevices) {
+        appendMessage('Voice input requires a secure connection (HTTPS). Please type your question instead.', 'ai-error');
       } else {
-        appendMessage('Could not access microphone. Please check your device settings.', 'ai-error');
+        appendMessage('Could not access microphone: ' + err.message + '. Please type your question instead.', 'ai-error');
       }
     }
   }

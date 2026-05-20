@@ -1202,21 +1202,17 @@ section:nth-child(even) { background: #f5ebe2; }
 #ai-panel {
   position: absolute;
   bottom: 72px; right: 0;
-  width: 360px;
+  width: 340px;
   background: #fdf7f2;
   border: 1px solid rgba(59, 111, 212, 0.18);
   border-radius: 20px;
   box-shadow: 0 12px 40px rgba(40, 60, 120, 0.18);
-  overflow: visible;
+  overflow: hidden;
   opacity: 0;
   transform: scale(0.92) translateY(12px);
   transform-origin: bottom right;
   pointer-events: none;
   transition: opacity 0.28s ease, transform 0.28s ease;
-  display: flex;
-  flex-direction: column;
-  height: 420px;
-  max-height: 420px;
 }
 #ai-panel.open {
   opacity: 1;
@@ -1272,17 +1268,14 @@ section:nth-child(even) { background: #f5ebe2; }
 
 /* Messages area */
 .ai-messages {
-  height: 280px;
-  min-height: 280px;
-  max-height: 280px;
-  overflow-y: auto !important;
+  height: 240px;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 10px;
   scroll-behavior: smooth;
-  box-sizing: border-box;
 }
 .ai-messages::-webkit-scrollbar { width: 3px; }
 .ai-messages::-webkit-scrollbar-thumb { background: rgba(59,111,212,0.25); border-radius: 99px; }
