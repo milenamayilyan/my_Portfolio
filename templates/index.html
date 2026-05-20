@@ -379,13 +379,12 @@
 ════════════════════════════════════════════════════════ -->
 <div id="ai-bubble">
 
-  <!-- AI Chat Panel -->
+  <!-- AI Chat Panel — structure mirrors #chat-panel exactly -->
   <div id="ai-panel" role="dialog" aria-label="AI Assistant">
 
     <!-- Header -->
     <div class="ai-header">
       <div class="ai-header-icon">
-        <!-- Spark / robot icon -->
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2 7h7l-5.5 4 2 7L12 16l-5.5 4 2-7L3 9h7z"/></svg>
       </div>
       <div class="ai-header-info">
@@ -397,22 +396,16 @@
       </button>
     </div>
 
-    <!-- Message list -->
-    <div class="ai-messages" id="ai-messages" role="log" aria-live="polite"></div>
+    <!-- Messages — fixed height + scroll, identical to .chat-messages -->
+    <div class="ai-messages" id="ai-messages"></div>
 
-    <!-- Typing indicator (hidden by default) -->
-    <div class="ai-typing" id="ai-typing" style="display:none;" aria-label="AI is typing">
-      <span></span><span></span><span></span>
-    </div>
-
-    <!-- Input row -->
-    <div class="ai-input-row">
-      <!-- Microphone (speech-to-text) -->
+    <!-- Input area — uses same class as personal chat for identical behaviour -->
+    <div class="chat-input-area" id="ai-input-area">
       <button class="ai-mic-btn" id="ai-mic-btn" title="Speak your question" type="button" aria-label="Start voice input">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
       </button>
-      <textarea id="ai-input" placeholder="Ask about Milena's skills, projects…" rows="1" aria-label="Message input"></textarea>
-      <button class="ai-send-btn" id="ai-send-btn" title="Send message" type="button" aria-label="Send message">
+      <textarea id="ai-input" placeholder="Ask about Milena's skills, projects…" rows="1"></textarea>
+      <button class="chat-send-btn ai-send-btn" id="ai-send-btn" title="Send" type="button">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
       </button>
     </div>
