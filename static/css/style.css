@@ -1207,7 +1207,7 @@ section:nth-child(even) { background: #f5ebe2; }
   border: 1px solid rgba(59, 111, 212, 0.18);
   border-radius: 20px;
   box-shadow: 0 12px 40px rgba(40, 60, 120, 0.18);
-  overflow: hidden;
+  overflow: visible;
   opacity: 0;
   transform: scale(0.92) translateY(12px);
   transform-origin: bottom right;
@@ -1215,8 +1215,8 @@ section:nth-child(even) { background: #f5ebe2; }
   transition: opacity 0.28s ease, transform 0.28s ease;
   display: flex;
   flex-direction: column;
-  /* Fixed total height — messages area scrolls inside */
   height: 420px;
+  max-height: 420px;
 }
 #ai-panel.open {
   opacity: 1;
@@ -1272,15 +1272,17 @@ section:nth-child(even) { background: #f5ebe2; }
 
 /* Messages area */
 .ai-messages {
-  flex: 1;
-  min-height: 0;
+  height: 280px;
+  min-height: 280px;
   max-height: 280px;
-  overflow-y: scroll !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
   padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 10px;
   scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 .ai-messages::-webkit-scrollbar { width: 3px; }
 .ai-messages::-webkit-scrollbar-thumb { background: rgba(59,111,212,0.25); border-radius: 99px; }
