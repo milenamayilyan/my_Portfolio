@@ -212,68 +212,73 @@
    */
   const SR = window.SpeechRecognition || window.webkitSpeechRecognition || null;
 
-  if (!SR) {
-    // Browser doesn't support Web Speech API — show message on tap instead of hiding
-    aiMicBtn.addEventListener('click', () => {
-      appendMessage('Voice input isn\'t supported in this browser. Please use Chrome or Safari, or type your question.', 'ai-error');
-    });
-  } else {
-    recognition = new SR();
-    recognition.continuous     = false;
-    recognition.interimResults = true;
-    recognition.lang           = 'en-US';
+  /* Safari requires a fresh SpeechRecognition instance each time.
+     We create a new one on every tap rather than reusing one instance. */
+  function startListening() {
+    if (!SR) {
+      appendMessage("Voice input isn't available in this browser. Please type your question.", 'ai-error');
+      return;
+    }
+    try {
+      recognition = new SR();
+      recognition.continuous     = false;
+      recognition.interimResults = true;
+      recognition.lang           = 'en-US';
 
-    recognition.onresult = e => {
-      let transcript = '';
-      for (let i = e.resultIndex; i < e.results.length; i++) {
-        transcript += e.results[i][0].transcript;
-      }
-      aiInput.value = transcript;
-      aiInput.style.height = 'auto';
-      aiInput.style.height = Math.min(aiInput.scrollHeight, 100) + 'px';
-    };
+      recognition.onresult = e => {
+        let transcript = '';
+        for (let i = e.resultIndex; i < e.results.length; i++) {
+          transcript += e.results[i][0].transcript;
+        }
+        aiInput.value = transcript;
+        aiInput.style.height = 'auto';
+        aiInput.style.height = Math.min(aiInput.scrollHeight, 100) + 'px';
+      };
 
-    recognition.onstart = () => {
-      isListening = true;
-      aiMicBtn.classList.add('recording');
-      aiMicBtn.title = 'Listening… tap to stop';
-    };
+      recognition.onstart = () => {
+        isListening = true;
+        aiMicBtn.classList.add('recording');
+        aiMicBtn.title = 'Listening… tap to stop';
+      };
 
-    recognition.onend = () => {
-      isListening = false;
-      aiMicBtn.classList.remove('recording');
-      aiMicBtn.title = 'Speak your question';
-    };
+      recognition.onend = () => {
+        isListening = false;
+        recognition = null;
+        aiMicBtn.classList.remove('recording');
+        aiMicBtn.title = 'Speak your question';
+      };
 
-    recognition.onerror = e => {
-      isListening = false;
-      aiMicBtn.classList.remove('recording');
-      if (e.error === 'not-allowed') {
-        appendMessage('Microphone access denied. Please allow it in your browser settings.', 'ai-error');
-      } else if (e.error === 'no-speech') {
-        // Silent — user just didn't speak
-      } else {
-        appendMessage('Voice input error: ' + e.error + '. Please type instead.', 'ai-error');
-      }
-    };
+      recognition.onerror = e => {
+        isListening = false;
+        recognition = null;
+        aiMicBtn.classList.remove('recording');
+        if (e.error === 'not-allowed') {
+          appendMessage('Microphone access denied. Please allow it in your browser/system settings.', 'ai-error');
+        } else if (e.error === 'no-speech') {
+          // user just didn't speak — silent
+        } else {
+          appendMessage('Voice error: ' + e.error + '. Please type instead.', 'ai-error');
+        }
+      };
 
-    aiMicBtn.addEventListener('click', () => {
-      if (isLoading) return;
-      if (isListening) {
-        stopListening();
-      } else {
-        try { recognition.start(); }
-        catch (err) { console.warn('Speech recognition error:', err); }
-      }
-    });
+      recognition.start();
+    } catch (err) {
+      console.warn('Speech recognition failed to start:', err);
+      appendMessage("Couldn't start voice input. Please type your question.", 'ai-error');
+    }
   }
 
   function stopListening() {
-    if (recognition && isListening) {
+    if (recognition) {
       try { recognition.stop(); } catch (_) {}
     }
     isListening = false;
     aiMicBtn.classList.remove('recording');
   }
+
+  aiMicBtn.addEventListener('click', () => {
+    if (isLoading) return;
+    if (isListening) { stopListening(); } else { startListening(); }
+  });
 
 })();
