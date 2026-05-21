@@ -215,12 +215,14 @@
   /* Safari requires a fresh SpeechRecognition instance each time.
      We create a new one on every tap rather than reusing one instance. */
   function startListening() {
+    console.log('[Mic] SR available:', !!SR, 'window.SpeechRecognition:', !!window.SpeechRecognition, 'webkit:', !!window.webkitSpeechRecognition);
     if (!SR) {
       appendMessage("Voice input isn't available in this browser. Please type your question.", 'ai-error');
       return;
     }
     try {
       recognition = new SR();
+      console.log('[Mic] Recognition instance created');
       recognition.continuous     = false;
       recognition.interimResults = true;
       recognition.lang           = 'en-US';
