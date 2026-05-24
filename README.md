@@ -6,12 +6,9 @@ A modern, production-ready personal portfolio built with Flask + SocketIO, serve
 
 ## 🌐 Live URLs
 
-| Version | URL | Notes |
-|---|---|---|
-| HTTP | http://51.21.162.125 | Main server (EC2) |
-| HTTPS | https://hierarchy-int-insurance-largest.trycloudflare.com | Cloudflare tunnel |
+The portfolio is accessible via [HTTP](http://51.21.162.125) (main EC2 server) and [HTTPS](https://bedrooms-gay-professor-almost.trycloudflare.com) (Cloudflare tunnel).
 
-> **Speech-to-Text (mic input) requires HTTPS.** Use the Cloudflare URL above to test voice input in the AI Assistant. The HTTP version works for everything except the microphone.
+> **Speech-to-Text (mic input) requires HTTPS.** Use the [HTTPS version](https://bedrooms-gay-professor-almost.trycloudflare.com) to test voice input in the AI Assistant. Everything else works on both.
 
 ---
 
