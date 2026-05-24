@@ -163,6 +163,44 @@ Once SSL is active, Speech-to-Text works on every browser and device automatical
 
 ---
 
+## 🖥️ tmux (Important for Stability)
+
+tmux keeps long-running processes alive even if you close your SSH session or laptop.
+
+**Why it matters:** without tmux, closing SSH kills cloudflared and your HTTPS tunnel goes offline. With tmux, everything keeps running in the background.
+
+**Start a session:**
+```bash
+tmux new -s tunnel
+```
+
+**Run your command inside:**
+```bash
+cloudflared tunnel --url http://localhost:80
+```
+
+**Detach (leave it running):**
+```
+Ctrl + B, then D
+```
+
+**Reattach later:**
+```bash
+tmux attach -t tunnel
+```
+
+**List sessions:**
+```bash
+tmux ls
+```
+
+**Kill a session:**
+```bash
+tmux kill-session -t tunnel
+```
+
+---
+
 ## Useful Commands
 
 ```bash
