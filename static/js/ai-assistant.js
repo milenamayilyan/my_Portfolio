@@ -65,7 +65,7 @@
       btn.className = 'ai-speak-btn';
       btn.title = 'Read aloud';
       btn.innerHTML = listenIcon();
-      btn.addEventListener('click', () => speakText(text, btn));
+      btn.addEventListener('click', (e) => { e.stopPropagation(); speakText(text, btn); });
       div.appendChild(btn);
     }
 
